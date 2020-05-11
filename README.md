@@ -1,0 +1,1 @@
+# DolarSolidario.Mobile
