@@ -22,6 +22,7 @@ namespace SolidarityDollar.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
+
             StartPulseAnimation();
            
         }
@@ -44,7 +45,7 @@ namespace SolidarityDollar.Views
         private async void InitializeData()
         {
             //Call Api Service Rate
-            RateDataStore.Rates = await _apiRateService.GetRateDolar();
+            RateDataStore.LastRate = await _apiRateService.GetRateDolar();
 
             await MainThread.InvokeOnMainThreadAsync(AnimateTransition);
 
@@ -54,7 +55,7 @@ namespace SolidarityDollar.Views
         private async Task AnimateTransition()
         {
             // To at least show the pulse animation. Give a feeling that we're loading the app.
-            await Task.Delay(2500);
+            await Task.Delay(3500);
 
             // Explode the logo and fade to white, which is what the incoming page comes up as.
             var explodeImageTask = Task.WhenAll(Content.ScaleTo(100, 500, Easing.CubicOut), Content.FadeTo(0, 250, Easing.CubicInOut));

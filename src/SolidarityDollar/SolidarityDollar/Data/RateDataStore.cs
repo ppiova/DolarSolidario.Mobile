@@ -6,6 +6,6 @@ namespace SolidarityDollar.Data
 {
     public class RateDataStore
     {
-        public static List<RateDolar> Rates { get; set; } = new List<RateDolar>();
+        public static RateDolar LastRate { get; set; } = new RateDolar();
     }
 }

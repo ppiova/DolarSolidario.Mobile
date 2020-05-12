@@ -10,47 +10,41 @@ namespace SolidarityDollar.Services
     public class ApiRateService
     {
 
-        public async Task<List<RateDolar>> GetRateDolar()
+        public async Task<RateDolar> GetRateDolar()
         {
-           
-            
+
+
             try
             {
                 //var client = new ImageSearchClient(new ApiKeyServiceClientCredentials(ApiKeys.BingImageSearch));
 
-                var resultRate = new List<RateDolar>();
+                var resultRate = new RateDolar();
 
                 var result = await ApiKeys.ApiUrl
                 .AppendPathSegment(ApiKeys.Controller)
-                .GetJsonAsync<List<RateDolar>>();
+                .GetJsonAsync<RateDolar>();
 
+                resultRate.RateOficial = result.RateOficial;
+                resultRate.RateBlue = result.RateBlue;
+                resultRate.RateSolidario = result.RateSolidario;
+                resultRate.RateDate = result.RateDate;
+                
 
-                resultRate.Add(new RateDolar
-                {
-                    RateOficial = result[0].RateOficial,
-                    RateBlue = result[0].RateBlue,
-                    RateSolidario = result[0].RateSolidario,
-                    RateDate = result[0].RateDate
-
-                }) ;
                 return resultRate;
             }
             catch
             {
-                return new List<RateDolar> {
-                    new RateDolar
-                    {
-                        RateOficial = "0",
-                        RateBlue = "0",
-                        RateSolidario = "0",
-                        RateDate = new DateTime(1984, 9, 5, 18, 30, 0)
-                        //SQLLite
-                        //Use DataBase LastRate
-                        //RateOficial = result[0].RateOficial,
-                        //RateBlue = result[0].RateBlue,
-                        //RateSolidario = result[0].RateSolidario,
-                        //RateDate = result[0].RateDate
-                    }};
+                //TODO: Call SQLLite for LastRates
+                var mockRate = new RateDolar
+                {
+                    RateOficial = "0",
+                    RateBlue = "0",
+                    RateSolidario = "0",
+                    RateDate = new DateTime(1984, 9, 5, 18, 30, 00)
+                };
+
+                return mockRate;
+
             }
         }
     }
