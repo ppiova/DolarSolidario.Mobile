@@ -8,7 +8,7 @@ namespace SolidarityDollar
 
 
         //EndPoints
-        public static string ApiUrl = "https://dolarsolidariowebapi.azurewebsites.net";
-        public static string Controller = "/api/rates";
+        public static string ApiUrl = "";
+        public static string Controller = "";
     }
 }
