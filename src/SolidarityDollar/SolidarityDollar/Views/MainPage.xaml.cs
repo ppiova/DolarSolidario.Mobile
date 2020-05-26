@@ -16,7 +16,7 @@ namespace SolidarityDollar.Views
         {
             if (string.IsNullOrWhiteSpace(RateTextEntry.Text))
             {
-                await DisplayAlert("No se ingreso monto", "¡No ingresaste ningún monto!", "OK");
+                await DisplayAlert("Atención", "¡No ingresaste ningún monto!", "OK");
                 return;
             }
         }
