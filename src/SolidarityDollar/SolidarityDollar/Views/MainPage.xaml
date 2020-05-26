@@ -1,6 +1,53 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SolidarityDollar.Views.MainPage">
-    <ContentPage.Content>
-        <Label Text="Piova"></Label>
-    </ContentPage.Content>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SolidarityDollar.Views.MainPage"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
+
+    <ScrollView>
+        <StackLayout BackgroundColor="LightGreen">
+
+         <pancake:PancakeView HorizontalOptions="Fill" VerticalOptions="Start" CornerRadius="0,0,0,40" HeightRequest="350">
+           <Grid>
+              <StackLayout>
+                   <StackLayout Spacing="0" VerticalOptions="Start" Orientation="Horizontal">
+                            <StackLayout.Margin>
+                                <OnPlatform x:TypeArguments="Thickness">
+                                    <On Platform="iOS" Value="10,60,0,0" />
+                                    <On Platform="Android" Value="10,24,0,0" />
+                                </OnPlatform>
+                            </StackLayout.Margin>                                           
+                        <Label TextColor="Gray" FontSize="15" Text="Fecha Dólar: " />
+                        <Label TextColor="Gray" FontSize="15" Text="26/05/2020" />
+                           
+                    </StackLayout>
+
+                <!-- Entry Value -->
+                <pancake:PancakeView Margin="20,10" HeightRequest="100" BackgroundColor="#99ffffff" CornerRadius="8" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+                    <StackLayout Orientation="Horizontal" VerticalOptions="Center" Margin="20,0">
+                        <Label FontSize="60" VerticalOptions="Center" TextColor="#41BC3F" FontFamily="FontAwesomeSolid" Text="" Margin="12,0,6,0" />
+                        <Entry x:Name="RateTextEntry" FontSize="50" TextColor="Gray" HorizontalTextAlignment="Center" BackgroundColor="Transparent" Keyboard="Numeric"
+                               VerticalOptions="Center" HorizontalOptions="FillAndExpand" Placeholder="monto" Completed="RateTextEntry_Completed"
+                               PlaceholderColor="Gray" MaxLength="5"/>
+                        <StackLayout>
+                             <Label FontSize="10" TextColor="Gray" Text="Hasta 5 dígitos" VerticalOptions="Start" />
+                             <Label FontSize="30" TextColor="Gray" FontFamily="FontAwesomeSolid" Text="" HorizontalTextAlignment="Center"/>
+                        </StackLayout>
+                       
+                    </StackLayout>
+                </pancake:PancakeView>
+              </StackLayout>
+
+            </Grid>
+
+         </pancake:PancakeView>
+            
+
+
+        </StackLayout>
+
+
+    </ScrollView>
+
+
 </ContentPage>

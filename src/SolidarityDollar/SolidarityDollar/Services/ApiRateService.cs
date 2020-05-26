@@ -12,8 +12,7 @@ namespace SolidarityDollar.Services
 
         public async Task<RateDolar> GetRateDolar()
         {
-
-
+            
             try
             {
                 //var client = new ImageSearchClient(new ApiKeyServiceClientCredentials(ApiKeys.BingImageSearch));
@@ -28,7 +27,7 @@ namespace SolidarityDollar.Services
                 resultRate.RateBlue = result.RateBlue;
                 resultRate.RateSolidario = result.RateSolidario;
                 resultRate.RateDate = result.RateDate;
-                
+              
 
                 return resultRate;
             }
