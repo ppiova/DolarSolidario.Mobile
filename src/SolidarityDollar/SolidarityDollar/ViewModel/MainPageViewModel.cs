@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using SolidarityDollar.Data;
 using SolidarityDollar.Models;
+using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace SolidarityDollar.ViewModel
 {
@@ -17,6 +19,7 @@ namespace SolidarityDollar.ViewModel
             set => Set(ref _currentRate, value);
         }
 
+       
 
         private double ValueRateDolarOficial { get; set; }
         private double ValueRateDolarBlue { get; set; }
@@ -25,15 +28,26 @@ namespace SolidarityDollar.ViewModel
 
         public MainPageViewModel()
         {
-            if(LastRates == null)
-            {
-                ValueRateDolarOficial = Convert.ToDouble(LastRates.RateOficial);
-                ValueRateDolarBlue = Convert.ToDouble(LastRates.RateBlue);
-                ValueRateDolarSolidario = Convert.ToDouble(LastRates.RateSolidario);
-                DateDolarOficial = LastRates.RateDate.Date.ToShortDateString();
+            CurrentRate = LastRates;
 
+            if(CurrentRate != null)
+            {
+                ValueRateDolarOficial = Convert.ToDouble(CurrentRate.RateOficial);
+                ValueRateDolarBlue = Convert.ToDouble(CurrentRate.RateBlue);
+                ValueRateDolarSolidario = Convert.ToDouble(CurrentRate.RateSolidario);
+                DateDolarOficial = CurrentRate.RateDate.Date.ToShortDateString();
+                                
             }
         }
+
+        
+
+        //public Command<string> SpeachTranslationsCommand { get; } = new Command<string>(async (text) =>
+        //{
+        //    if (!string.IsNullOrWhiteSpace(text))
+        //        await TextToSpeech.SpeakAsync(text);
+
+        //}); 
 
     }
 }

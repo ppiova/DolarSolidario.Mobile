@@ -15,20 +15,20 @@ namespace SolidarityDollar.Services
             
             try
             {
-                //var client = new ImageSearchClient(new ApiKeyServiceClientCredentials(ApiKeys.BingImageSearch));
-
+                
                 var resultRate = new RateDolar();
 
-                var result = await ApiKeys.ApiUrl
-                .AppendPathSegment(ApiKeys.Controller)
+                RateDolar result = await ApiKeys.ApiUrl
+                .AppendPathSegment(ApiKeys.ControllerLastRate)
+                .WithHeader("Ocp-Apim-Subscription-Key", ApiKeys.ApiKeyDolarSolidario)
                 .GetJsonAsync<RateDolar>();
 
                 resultRate.RateOficial = result.RateOficial;
                 resultRate.RateBlue = result.RateBlue;
                 resultRate.RateSolidario = result.RateSolidario;
                 resultRate.RateDate = result.RateDate;
-              
 
+                //TODO: Save SQLLite for LastRates if DateRate is !=
                 return resultRate;
             }
             catch

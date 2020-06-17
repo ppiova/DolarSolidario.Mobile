@@ -23,7 +23,7 @@
 	<key>MinimumOSVersion</key>
 	<string>8.0</string>
 	<key>CFBundleDisplayName</key>
-	<string>SolidarityDollar</string>
+	<string>Dólar Solidario</string>
 	<key>CFBundleIdentifier</key>
 	<string>ppiova.SolidarityDollar</string>
 	<key>CFBundleVersion</key>

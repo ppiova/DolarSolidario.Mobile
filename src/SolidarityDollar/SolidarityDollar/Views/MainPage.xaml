@@ -6,7 +6,7 @@
 
     <ScrollView>
         <StackLayout BackgroundColor="LightGreen">
-
+         
          <pancake:PancakeView HorizontalOptions="Fill" VerticalOptions="Start" CornerRadius="0,0,0,40" HeightRequest="350">
            <Grid>
               <StackLayout>
@@ -18,7 +18,7 @@
                                 </OnPlatform>
                             </StackLayout.Margin>                                           
                         <Label TextColor="Gray" FontSize="15" Text="Fecha Dólar: " />
-                        <Label TextColor="Gray" FontSize="15" Text="26/05/2020" />
+                        <Label TextColor="Gray" FontSize="15" Text="{Binding DateDolarOficial}" />
                            
                     </StackLayout>
 
@@ -26,12 +26,22 @@
                 <pancake:PancakeView Margin="20,10" HeightRequest="100" BackgroundColor="#99ffffff" CornerRadius="8" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
                     <StackLayout Orientation="Horizontal" VerticalOptions="Center" Margin="20,0">
                         <Label FontSize="60" VerticalOptions="Center" TextColor="#41BC3F" FontFamily="FontAwesomeSolid" Text="" Margin="12,0,6,0" />
-                        <Entry x:Name="RateTextEntry" FontSize="50" TextColor="Gray" HorizontalTextAlignment="Center" BackgroundColor="Transparent" Keyboard="Numeric"
+                        <Entry x:Name="RateTextEntry" FontSize="40" TextColor="Gray" HorizontalTextAlignment="Center" BackgroundColor="Transparent" Keyboard="Numeric"
                                VerticalOptions="Center" HorizontalOptions="FillAndExpand" Placeholder="monto" Completed="RateTextEntry_Completed"
                                PlaceholderColor="Gray" MaxLength="5"/>
                         <StackLayout>
-                             <Label FontSize="10" TextColor="Gray" Text="Hasta 5 dígitos" VerticalOptions="Start" />
-                             <Label FontSize="30" TextColor="Gray" FontFamily="FontAwesomeSolid" Text="" HorizontalTextAlignment="Center"/>
+                            
+                             <Label FontSize="10" TextColor="Gray" Text="Solo 5 dígitos" VerticalOptions="Start" />
+                             <Label FontSize="40" TextColor="Gray" Text="" FontFamily="FontAwesomeSolid" VerticalOptions="Start">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Tapped="OnTapGestureRecognizerTapped" />
+                                    </Label.GestureRecognizers>
+
+                             </Label>
+                                
+                           
+                                
                         </StackLayout>
                        
                     </StackLayout>
