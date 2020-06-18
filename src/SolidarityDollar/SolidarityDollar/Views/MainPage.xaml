@@ -26,8 +26,11 @@
                 <pancake:PancakeView Margin="20,10" HeightRequest="100" BackgroundColor="#99ffffff" CornerRadius="8" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
                     <StackLayout Orientation="Horizontal" VerticalOptions="Center" Margin="20,0">
                         <Label FontSize="60" VerticalOptions="Center" TextColor="#41BC3F" FontFamily="FontAwesomeSolid" Text="" Margin="12,0,6,0" />
-                        <Entry x:Name="RateTextEntry" FontSize="40" TextColor="Gray" HorizontalTextAlignment="Center" BackgroundColor="Transparent" Keyboard="Numeric"
-                               VerticalOptions="Center" HorizontalOptions="FillAndExpand" Placeholder="monto" Completed="RateTextEntry_Completed"
+                        <Entry x:Name="RateTextEntry" Text="{Binding InputText, Mode=OneWay}"
+                               ReturnCommand="{Binding CalculareRatesCommand}" ReturnCommandParameter="{Binding Text, Source={RelativeSource Mode=Self}}"
+                               FontSize="40" TextColor="Gray" HorizontalTextAlignment="Center"
+                               BackgroundColor="Transparent" Keyboard="Numeric" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Placeholder="monto"
+                               Completed="RateTextEntry_Completed"
                                PlaceholderColor="Gray" MaxLength="5"/>
                         <StackLayout>
                             
@@ -39,13 +42,32 @@
                                     </Label.GestureRecognizers>
 
                              </Label>
-                                
-                           
-                                
+                       
                         </StackLayout>
                        
                     </StackLayout>
                 </pancake:PancakeView>
+
+                <!-- Values Rates Day -->
+                  <pancake:PancakeView >
+                      <StackLayout>
+                           <Label Text="{Binding ValueRateDolarOficial}"></Label>
+                           <Label Text="{Binding ValueRateDolarSolidario}"></Label>
+                           <Label Text="{Binding ValueRateDolarBlue}"></Label>
+                          
+                      </StackLayout>
+                  </pancake:PancakeView>
+
+                  <!-- Values Calculate -->
+                  <pancake:PancakeView >
+                      <StackLayout>
+                           <Label Text="{Binding ResultOficial}"></Label>
+                           <Label Text="{Binding ResultSolidario}"></Label>
+                           <Label Text="{Binding ResultBlue}"></Label>
+                          
+                      </StackLayout>
+                  </pancake:PancakeView>
+             
               </StackLayout>
 
             </Grid>

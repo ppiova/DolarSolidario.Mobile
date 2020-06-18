@@ -28,8 +28,7 @@ namespace SolidarityDollar.Views
                 return;
             }
 
-            //Calculate Values
-
+           
         }
 
 
