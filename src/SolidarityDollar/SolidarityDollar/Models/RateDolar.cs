@@ -12,6 +12,7 @@ namespace SolidarityDollar.Models
         public string RateSolidario { get; set; }
 
         public DateTime RateDate { get; set; }
-    
+
+        
     }
 }

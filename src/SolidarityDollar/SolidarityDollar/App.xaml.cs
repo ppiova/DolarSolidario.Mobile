@@ -18,6 +18,7 @@ namespace SolidarityDollar
         {
             InitializeComponent();
 
+            //MainPage = new MainPage();
             MainPage = new SplashScreen();
         }
 

@@ -1,6 +1,85 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SolidarityDollar.Views.MainPage">
-    <ContentPage.Content>
-        <Label Text="Piova"></Label>
-    </ContentPage.Content>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SolidarityDollar.Views.MainPage"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
+
+    <ScrollView>
+        <StackLayout BackgroundColor="LightGreen">
+         
+         <pancake:PancakeView HorizontalOptions="Fill" VerticalOptions="Start" CornerRadius="0,0,0,40" HeightRequest="350">
+           <Grid>
+              <StackLayout>
+                   <StackLayout Spacing="0" VerticalOptions="Start" Orientation="Horizontal">
+                            <StackLayout.Margin>
+                                <OnPlatform x:TypeArguments="Thickness">
+                                    <On Platform="iOS" Value="10,60,0,0" />
+                                    <On Platform="Android" Value="10,24,0,0" />
+                                </OnPlatform>
+                            </StackLayout.Margin>                                           
+                        <Label TextColor="Gray" FontSize="15" Text="Fecha Dólar: " />
+                        <Label TextColor="Gray" FontSize="15" Text="{Binding DateDolarOficial}" />
+                           
+                    </StackLayout>
+
+                <!-- Entry Value -->
+                <pancake:PancakeView Margin="20,10" HeightRequest="100" BackgroundColor="#99ffffff" CornerRadius="8" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+                    <StackLayout Orientation="Horizontal" VerticalOptions="Center" Margin="20,0">
+                        <Label FontSize="60" VerticalOptions="Center" TextColor="#41BC3F" FontFamily="FontAwesomeSolid" Text="" Margin="12,0,6,0" />
+                        <Entry x:Name="RateTextEntry" Text="{Binding InputText, Mode=OneWay}"
+                               ReturnCommand="{Binding CalculareRatesCommand}" ReturnCommandParameter="{Binding Text, Source={RelativeSource Mode=Self}}"
+                               FontSize="40" TextColor="Gray" HorizontalTextAlignment="Center"
+                               BackgroundColor="Transparent" Keyboard="Numeric" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Placeholder="monto"
+                               Completed="RateTextEntry_Completed"
+                               PlaceholderColor="Gray" MaxLength="5"/>
+                        <StackLayout>
+                            
+                             <Label FontSize="10" TextColor="Gray" Text="Solo 5 dígitos" VerticalOptions="Start" />
+                             <Label FontSize="40" TextColor="Gray" Text="" FontFamily="FontAwesomeSolid" VerticalOptions="Start">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Tapped="OnTapGestureRecognizerTapped" />
+                                    </Label.GestureRecognizers>
+
+                             </Label>
+                       
+                        </StackLayout>
+                       
+                    </StackLayout>
+                </pancake:PancakeView>
+
+                <!-- Values Rates Day -->
+                  <pancake:PancakeView >
+                      <StackLayout>
+                           <Label Text="{Binding ValueRateDolarOficial}"></Label>
+                           <Label Text="{Binding ValueRateDolarSolidario}"></Label>
+                           <Label Text="{Binding ValueRateDolarBlue}"></Label>
+                          
+                      </StackLayout>
+                  </pancake:PancakeView>
+
+                  <!-- Values Calculate -->
+                  <pancake:PancakeView >
+                      <StackLayout>
+                           <Label Text="{Binding ResultOficial}"></Label>
+                           <Label Text="{Binding ResultSolidario}"></Label>
+                           <Label Text="{Binding ResultBlue}"></Label>
+                          
+                      </StackLayout>
+                  </pancake:PancakeView>
+             
+              </StackLayout>
+
+            </Grid>
+
+         </pancake:PancakeView>
+            
+
+
+        </StackLayout>
+
+
+    </ScrollView>
+
+
 </ContentPage>
