@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using Xamarin.Forms;
 
 namespace SolidarityDollar.iOS
 {
@@ -22,6 +23,8 @@ namespace SolidarityDollar.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            //added for shapes
+            Forms.SetFlags("CarouselView_Experimental");
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 

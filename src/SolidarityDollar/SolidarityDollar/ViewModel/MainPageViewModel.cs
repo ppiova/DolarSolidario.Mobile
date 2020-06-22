@@ -86,6 +86,7 @@ namespace SolidarityDollar.ViewModel
 
         private void CalculateResults()
         {
+            //Controlar que no sea null el input, sino mensaje
 
             var DoubleResultOficial = Convert.ToDouble(_inputText) * _valueRateDolarOficial;
             ResultOficial = DoubleResultOficial.ToString();
@@ -96,9 +97,7 @@ namespace SolidarityDollar.ViewModel
             var DoubleResultBlue = Convert.ToDouble(_inputText) * _valueRateDolarBlue;
             ResultBlue = DoubleResultBlue.ToString();
 
-            
-
-
+     
         }
 
 
