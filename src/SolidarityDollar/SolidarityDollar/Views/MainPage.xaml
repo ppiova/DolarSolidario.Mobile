@@ -136,7 +136,7 @@
                         Grid.Row="0"
                         Grid.RowSpan="2"
                         Grid.Column="1"
-                        Margin="0,0,0,0"
+                        Margin="0,15,0,10"
                         BackgroundColor="Transparent"
                         FontAttributes="Bold"
                         FontSize="30"
@@ -144,8 +144,7 @@
                         HorizontalOptions="End"
                         Text="{Binding ResultOficial, StringFormat='$ {0}'}"
                         TextColor="Gray"
-                        VerticalOptions="Center"
-                        WidthRequest="130" />
+                        VerticalOptions="Center" />
 
                 </Grid>
             </pancake:PancakeView>
@@ -187,7 +186,7 @@
                         Grid.Row="0"
                         Grid.RowSpan="2"
                         Grid.Column="1"
-                        Margin="0,0,0,0"
+                        Margin="0,15,0,10"
                         BackgroundColor="Transparent"
                         FontAttributes="Bold"
                         FontSize="30"
@@ -195,8 +194,7 @@
                         HorizontalOptions="End"
                         Text="{Binding ResultSolidario, StringFormat='$ {0}'}"
                         TextColor="Gray"
-                        VerticalOptions="Center"
-                        WidthRequest="130" />
+                        VerticalOptions="Center" />
 
                 </Grid>
             </pancake:PancakeView>
@@ -237,7 +235,7 @@
                         Grid.Row="0"
                         Grid.RowSpan="2"
                         Grid.Column="1"
-                        Margin="0,0,0,0"
+                        Margin="0,15,0,10"
                         BackgroundColor="Transparent"
                         FontAttributes="Bold"
                         FontSize="30"
@@ -245,32 +243,10 @@
                         HorizontalOptions="End"
                         Text="{Binding ResultBlue, StringFormat='$ {0}'}"
                         TextColor="Gray"
-                        VerticalOptions="Center"
-                        WidthRequest="130" />
+                        VerticalOptions="Center" />
 
                 </Grid>
             </pancake:PancakeView>
-            <!--Values Rates Day
-            <pancake:PancakeView>
-                <Grid>
-                    <StackLayout>
-                        <Label Text="{Binding ValueRateDolarOficial}" />
-                        <Label Text="{Binding ValueRateDolarSolidario}" />
-                        <Label Text="{Binding ValueRateDolarBlue}" />
-                    </StackLayout>
-                </Grid>
-            </pancake:PancakeView>
-
-              Values Calculate
-            <pancake:PancakeView>
-                <StackLayout>
-                    <Label Text="{Binding ResultOficial}" />
-                    <Label Text="{Binding ResultSolidario}" />
-                    <Label Text="{Binding ResultBlue}" />
-
-                </StackLayout>
-            </pancake:PancakeView>-->
-
 
         </StackLayout>
 
