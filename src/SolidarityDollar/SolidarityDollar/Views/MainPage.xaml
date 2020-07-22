@@ -10,7 +10,7 @@
 
             <pancake:PancakeView
                 CornerRadius="0,0,0,40"
-                HeightRequest="210"
+                HeightRequest="250"
                 HorizontalOptions="Fill"
                 VerticalOptions="Start">
                 <Grid>
@@ -38,7 +38,7 @@
                             Margin="10,10"
                             BackgroundColor="#99ffffff"
                             CornerRadius="8"
-                            HeightRequest="100"
+                            HeightRequest="150                             "
                             HorizontalOptions="FillAndExpand"
                             VerticalOptions="Start">
                             <StackLayout
@@ -50,13 +50,14 @@
                                     FontFamily="FontAwesomeSolid"
                                     FontSize="60"
                                     Text=""
-                                    TextColor="#41BC3F"
+                                    TextColor="SeaGreen"
                                     VerticalOptions="Center" />
                                 <Entry
                                     x:Name="RateTextEntry"
                                     BackgroundColor="Transparent"
                                     Completed="RateTextEntry_Completed"
-                                    FontSize="40"
+                                    FontAttributes="Bold"
+                                    FontSize="50"
                                     HorizontalOptions="FillAndExpand"
                                     HorizontalTextAlignment="Center"
                                     Keyboard="Numeric"
@@ -66,7 +67,7 @@
                                     ReturnCommand="{Binding CalculareRatesCommand}"
                                     ReturnCommandParameter="{Binding Text, Source={RelativeSource Mode=Self}}"
                                     Text="{Binding InputText, Mode=OneWay}"
-                                    TextColor="Gray"
+                                    TextColor="SeaGreen"
                                     VerticalOptions="Center" />
                                 <StackLayout>
 
@@ -104,47 +105,51 @@
                 Padding="10,10"
                 BackgroundColor="#99ffffff"
                 CornerRadius="8"
-                HeightRequest="80"
+                HeightRequest="100"
                 HorizontalOptions="FillAndExpand"
                 VerticalOptions="Start">
 
-                <Grid
-                    Margin="0,0,0,0"
-                    ColumnDefinitions="*,*"
-                    RowDefinitions="Auto,Auto,Auto,Auto,*">
+                <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto,*">
 
                     <Label
                         Grid.Row="0"
                         Grid.Column="0"
-                        Padding="0,0,0,0"
                         FontAttributes="Bold"
-                        FontSize="30"
+                        FontSize="40"
                         Text="{Binding ValueRateDolarOficial, StringFormat='$ {0}'}"
+                        TextColor="SeaGreen"
                         VerticalOptions="Start" />
 
                     <Label
                         Grid.Row="1"
                         Grid.Column="0"
-                        Padding="0,0"
                         FontAttributes="Bold"
-                        FontSize="15"
+                        FontSize="20"
                         Text="Dólar BNA"
                         TextColor="SeaGreen"
                         VerticalOptions="Start" />
 
                     <Label
                         Grid.Row="0"
-                        Grid.RowSpan="2"
                         Grid.Column="1"
-                        Margin="0,15,0,10"
                         BackgroundColor="Transparent"
                         FontAttributes="Bold"
-                        FontSize="30"
+                        FontSize="40"
                         HeightRequest="50"
                         HorizontalOptions="End"
                         Text="{Binding ResultOficial, StringFormat='$ {0}'}"
-                        TextColor="Gray"
+                        TextColor="SeaGreen"
                         VerticalOptions="Center" />
+
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        HorizontalOptions="End"
+                        Text="{Binding ResultOficialSmall, StringFormat='$ {0}'}"
+                        TextColor="SeaGreen"
+                        VerticalOptions="Start" />
 
                 </Grid>
             </pancake:PancakeView>
@@ -154,47 +159,51 @@
                 Padding="10,10"
                 BackgroundColor="#99ffffff"
                 CornerRadius="8"
-                HeightRequest="80"
+                HeightRequest="100"
                 HorizontalOptions="FillAndExpand"
                 VerticalOptions="Start">
 
-                <Grid
-                    Margin="0,0,0,0"
-                    ColumnDefinitions="*,*"
-                    RowDefinitions="Auto,Auto,Auto,Auto,*">
+                <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto,*">
 
                     <Label
                         Grid.Row="0"
                         Grid.Column="0"
-                        Padding="0,0,0,0"
                         FontAttributes="Bold"
-                        FontSize="30"
+                        FontSize="40"
                         Text="{Binding ValueRateDolarSolidario, StringFormat='$ {0}'}"
+                        TextColor="Green"
                         VerticalOptions="Start" />
 
                     <Label
                         Grid.Row="1"
                         Grid.Column="0"
-                        Padding="0,0"
                         FontAttributes="Bold"
-                        FontSize="15"
+                        FontSize="20"
                         Text="Dólar Solidario"
-                        TextColor="SeaGreen"
+                        TextColor="Green"
                         VerticalOptions="Start" />
 
                     <Label
                         Grid.Row="0"
-                        Grid.RowSpan="2"
                         Grid.Column="1"
-                        Margin="0,15,0,10"
                         BackgroundColor="Transparent"
                         FontAttributes="Bold"
-                        FontSize="30"
+                        FontSize="40"
                         HeightRequest="50"
                         HorizontalOptions="End"
                         Text="{Binding ResultSolidario, StringFormat='$ {0}'}"
-                        TextColor="Gray"
+                        TextColor="Green"
                         VerticalOptions="Center" />
+
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        HorizontalOptions="End"
+                        Text="{Binding ResultSolidarioSmall, StringFormat='$ {0}'}"
+                        TextColor="Green"
+                        VerticalOptions="Start" />
 
                 </Grid>
             </pancake:PancakeView>
@@ -203,47 +212,51 @@
                 Padding="10,10"
                 BackgroundColor="#99ffffff"
                 CornerRadius="8"
-                HeightRequest="80"
+                HeightRequest="100"
                 HorizontalOptions="FillAndExpand"
                 VerticalOptions="Start">
 
-                <Grid
-                    Margin="0,0,0,0"
-                    ColumnDefinitions="*,*"
-                    RowDefinitions="Auto,Auto,Auto,Auto,*">
+                <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto,*">
 
                     <Label
                         Grid.Row="0"
                         Grid.Column="0"
-                        Padding="0,0,0,0"
                         FontAttributes="Bold"
-                        FontSize="30"
+                        FontSize="40"
                         Text="{Binding ValueRateDolarBlue, StringFormat='$ {0}'}"
+                        TextColor="BlueViolet"
                         VerticalOptions="Start" />
 
                     <Label
                         Grid.Row="1"
                         Grid.Column="0"
-                        Padding="0,0"
                         FontAttributes="Bold"
-                        FontSize="15"
+                        FontSize="20"
                         Text="Dólar Blue"
-                        TextColor="SeaGreen"
+                        TextColor="BlueViolet"
                         VerticalOptions="Start" />
 
                     <Label
                         Grid.Row="0"
-                        Grid.RowSpan="2"
                         Grid.Column="1"
-                        Margin="0,15,0,10"
                         BackgroundColor="Transparent"
                         FontAttributes="Bold"
-                        FontSize="30"
+                        FontSize="40"
                         HeightRequest="50"
                         HorizontalOptions="End"
                         Text="{Binding ResultBlue, StringFormat='$ {0}'}"
-                        TextColor="Gray"
+                        TextColor="BlueViolet"
                         VerticalOptions="Center" />
+
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        HorizontalOptions="End"
+                        Text="{Binding ResultBlueSmall, StringFormat='$ {0}'}"
+                        TextColor="BlueViolet"
+                        VerticalOptions="Start" />
 
                 </Grid>
             </pancake:PancakeView>
