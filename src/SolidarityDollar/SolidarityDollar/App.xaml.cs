@@ -18,7 +18,7 @@ namespace SolidarityDollar
         {
             InitializeComponent();
 
-            //MainPage = new MainPage();
+            Device.SetFlags(new[] { "Shapes_Experimental", "MediaElement_Experimental" });
             MainPage = new SplashScreen();
         }
 

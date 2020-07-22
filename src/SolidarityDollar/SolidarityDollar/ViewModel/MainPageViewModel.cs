@@ -86,22 +86,47 @@ namespace SolidarityDollar.ViewModel
 
         private void CalculateResults()
         {
+            //Controlar que no sea null el input, sino mensaje
 
             var DoubleResultOficial = Convert.ToDouble(_inputText) * _valueRateDolarOficial;
-            ResultOficial = DoubleResultOficial.ToString();
+                        
+            ResultOficial = FormatNumber(DoubleResultOficial);
+            ResultOficialSmall = string.Format("{0:0,0.##}",DoubleResultOficial);
 
             var DoubleResultSolidario = Convert.ToDouble(_inputText) * _valueRateDolarSolidario;
-            ResultSolidario = DoubleResultSolidario.ToString();
+            ResultSolidario = FormatNumber(DoubleResultSolidario);
+            ResultSolidarioSmall = string.Format("{0:0,0.##}", DoubleResultSolidario); 
 
             var DoubleResultBlue = Convert.ToDouble(_inputText) * _valueRateDolarBlue;
-            ResultBlue = DoubleResultBlue.ToString();
-
-            
+            ResultBlue = FormatNumber(DoubleResultBlue);
+            ResultBlueSmall = string.Format("{0:0,0.##}",DoubleResultBlue);
 
 
         }
 
+        static string FormatNumber(double num)
+        {
+            if (num >= 100000000)
+            {
+                return (num / 1000000D).ToString("0.#M");
+            }
+            if (num >= 1000000)
+            {
+                return (num / 1000000D).ToString("0.##M");
+            }
+            if (num >= 100000)
+            {
+                return (num / 1000D).ToString("0.#k");
+            }
+            if (num >= 10000)
+            {
+                return (num / 1000D).ToString("0.##k");
+            }
 
+            return num.ToString("#,0");
+        }
+
+        //result with mask with FormatNumber
         private string _resultOficial;
         public string ResultOficial
         {
@@ -132,7 +157,38 @@ namespace SolidarityDollar.ViewModel
             }
         }
 
-       
+        //result small font
+        private string _resultOficialSmall;
+        public string ResultOficialSmall
+        {
+            get => _resultOficialSmall;
+            set
+            {
+                Set(ref _resultOficialSmall, value);
+            }
+        }
+
+        private string _resultSolidarioSmall;
+        public string ResultSolidarioSmall
+        {
+            get => _resultSolidarioSmall;
+            set
+            {
+                Set(ref _resultSolidarioSmall, value);
+            }
+        }
+
+        private string _resultBlueSmall;
+        public string ResultBlueSmall
+        {
+            get => _resultBlueSmall;
+            set
+            {
+                Set(ref _resultBlueSmall, value);
+            }
+        }
+
+
 
 
 
