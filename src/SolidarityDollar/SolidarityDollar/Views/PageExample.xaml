@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="SolidarityDollar.Views.PageExample"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:SolidarityDollar.Controls">
+    <ContentPage.Content>
+        <Grid>
+            <local:VideoPlayer Source="IntroVideo.mp4" />
+            <ScrollView>
+                <StackLayout Margin="10">
+
+                    <Image
+                        Margin="0,30,0,0"
+                        HeightRequest="60"
+                        HorizontalOptions="Center"
+                        Source="DolarLogo"
+                        VerticalOptions="StartAndExpand" />
+
+                    <Label
+                        FontSize="20"
+                        Text="Beer and that's it!"
+                        VerticalOptions="Center" />
+
+                    <Button
+                        Margin="25"
+                        BackgroundColor="Black"
+                        CornerRadius="40"
+                        Text="Get started"
+                        TextColor="White" />
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

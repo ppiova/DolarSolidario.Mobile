@@ -4,9 +4,11 @@ using System.Globalization;
 using SolidarityDollar.ViewModel;
 using Xamarin.Essentials;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace SolidarityDollar.Views
 {
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : ContentPage
     {
         private readonly MainPageViewModel _mainPageViewModel = new MainPageViewModel();
