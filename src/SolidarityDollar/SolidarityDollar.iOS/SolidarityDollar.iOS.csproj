@@ -146,8 +146,8 @@
   <ItemGroup>
     <BundleResource Include="Resources\DolarSolidario.png" />
     <BundleResource Include="Resources\DolarLogo.png" />
-    <BundleResource Include="Resources\Money.mp4" />
     <BundleResource Include="Resources\IntroVideo.mp4" />
+    <BundleResource Include="Resources\IntroDolar.mp4" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Renderers\" />

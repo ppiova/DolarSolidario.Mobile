@@ -9,7 +9,7 @@
     <ContentPage.Content>
 
         <Grid>
-            <local:VideoPlayer Source="IntroVideo.mp4" />
+            <local:VideoPlayer Source="IntroDolar.mp4" />
             <ScrollView>
 
                 <StackLayout>
@@ -66,7 +66,7 @@
                                             FontSize="50"
                                             HorizontalOptions="FillAndExpand"
                                             HorizontalTextAlignment="Center"
-                                            Keyboard="Numeric"
+                                            Keyboard="Default"
                                             MaxLength="5"
                                             Placeholder="monto"
                                             PlaceholderColor="Gray"
@@ -121,7 +121,7 @@
                                 Grid.Row="0"
                                 Grid.Column="0"
                                 FontAttributes="Bold"
-                                FontSize="40"
+                                FontSize="35"
                                 Text="{Binding ValueRateDolarOficial, StringFormat='$ {0}'}"
                                 TextColor="SeaGreen"
                                 VerticalOptions="Start" />
@@ -140,7 +140,7 @@
                                 Grid.Column="1"
                                 BackgroundColor="Transparent"
                                 FontAttributes="Bold"
-                                FontSize="40"
+                                FontSize="35"
                                 HeightRequest="50"
                                 HorizontalOptions="End"
                                 Text="{Binding ResultOficial, StringFormat='$ {0}'}"
@@ -175,7 +175,7 @@
                                 Grid.Row="0"
                                 Grid.Column="0"
                                 FontAttributes="Bold"
-                                FontSize="40"
+                                FontSize="35"
                                 Text="{Binding ValueRateDolarSolidario, StringFormat='$ {0}'}"
                                 TextColor="Green"
                                 VerticalOptions="Start" />
@@ -194,7 +194,7 @@
                                 Grid.Column="1"
                                 BackgroundColor="Transparent"
                                 FontAttributes="Bold"
-                                FontSize="40"
+                                FontSize="35"
                                 HeightRequest="50"
                                 HorizontalOptions="End"
                                 Text="{Binding ResultSolidario, StringFormat='$ {0}'}"
@@ -228,7 +228,7 @@
                                 Grid.Row="0"
                                 Grid.Column="0"
                                 FontAttributes="Bold"
-                                FontSize="40"
+                                FontSize="35"
                                 Text="{Binding ValueRateDolarBlue, StringFormat='$ {0}'}"
                                 TextColor="BlueViolet"
                                 VerticalOptions="Start" />
@@ -247,7 +247,7 @@
                                 Grid.Column="1"
                                 BackgroundColor="Transparent"
                                 FontAttributes="Bold"
-                                FontSize="40"
+                                FontSize="35"
                                 HeightRequest="50"
                                 HorizontalOptions="End"
                                 Text="{Binding ResultBlue, StringFormat='$ {0}'}"

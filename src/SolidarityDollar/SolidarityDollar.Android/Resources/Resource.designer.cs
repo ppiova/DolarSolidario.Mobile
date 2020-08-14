@@ -9356,10 +9356,10 @@ namespace SolidarityDollar.Droid
 		{
 			
 			// aapt resource value: 0x7F0D0000
-			public const int IntroVideo = 2131558400;
+			public const int IntroDolar = 2131558400;
 			
 			// aapt resource value: 0x7F0D0001
-			public const int Money = 2131558401;
+			public const int IntroVideo = 2131558401;
 			
 			static Raw()
 			{
