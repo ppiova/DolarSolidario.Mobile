@@ -61,7 +61,6 @@
                                         <Entry
                                             x:Name="RateTextEntry"
                                             BackgroundColor="Transparent"
-                                            Completed="RateTextEntry_Completed"
                                             FontAttributes="Bold"
                                             FontSize="50"
                                             HorizontalOptions="FillAndExpand"
@@ -72,7 +71,7 @@
                                             PlaceholderColor="Gray"
                                             ReturnCommand="{Binding CalculareRatesCommand}"
                                             ReturnCommandParameter="{Binding Text, Source={RelativeSource Mode=Self}}"
-                                            Text="{Binding InputText, Mode=OneWay}"
+                                            Text="{Binding InputText, Mode=TwoWay}"
                                             TextColor="SeaGreen"
                                             VerticalOptions="Center" />
                                         <StackLayout>
