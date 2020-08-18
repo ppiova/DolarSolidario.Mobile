@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Threading.Tasks;
 using SolidarityDollar.Data;
 using SolidarityDollar.Models;
 using Xamarin.Forms;
@@ -37,8 +39,7 @@ namespace SolidarityDollar.ViewModel
             get => _valueRateDolarBlue;
             set => Set(ref _valueRateDolarBlue, value);
         }
-
-      
+            
 
         private string  _dateDolarOficial;
         public string DateDolarOficial
@@ -75,6 +76,7 @@ namespace SolidarityDollar.ViewModel
 
                 Set(ref _inputText, value);
 
+                
                 CalculateResults();
             }
         }
@@ -86,22 +88,39 @@ namespace SolidarityDollar.ViewModel
 
         private void CalculateResults()
         {
-            //Controlar que no sea null el input, sino mensaje
+            if (ValidarFormulario())
+            {
+                //GoodJob
+                var DoubleResultOficial = Convert.ToDouble(_inputText) * _valueRateDolarOficial;
 
-            var DoubleResultOficial = Convert.ToDouble(_inputText) * _valueRateDolarOficial;
-                        
-            ResultOficial = FormatNumber(DoubleResultOficial);
-            ResultOficialSmall = string.Format("{0:0,0.##}",DoubleResultOficial);
+                ResultOficial = FormatNumber(DoubleResultOficial);
+                ResultOficialSmall = string.Format("{0:0,0.##}", DoubleResultOficial);
 
-            var DoubleResultSolidario = Convert.ToDouble(_inputText) * _valueRateDolarSolidario;
-            ResultSolidario = FormatNumber(DoubleResultSolidario);
-            ResultSolidarioSmall = string.Format("{0:0,0.##}", DoubleResultSolidario); 
+                var DoubleResultSolidario = Convert.ToDouble(_inputText) * _valueRateDolarSolidario;
+                ResultSolidario = FormatNumber(DoubleResultSolidario);
+                ResultSolidarioSmall = string.Format("{0:0,0.##}", DoubleResultSolidario);
 
-            var DoubleResultBlue = Convert.ToDouble(_inputText) * _valueRateDolarBlue;
-            ResultBlue = FormatNumber(DoubleResultBlue);
-            ResultBlueSmall = string.Format("{0:0,0.##}",DoubleResultBlue);
+                var DoubleResultBlue = Convert.ToDouble(_inputText) * _valueRateDolarBlue;
+                ResultBlue = FormatNumber(DoubleResultBlue);
+                ResultBlueSmall = string.Format("{0:0,0.##}", DoubleResultBlue);
+            }
+
+            //Dont Pass   
 
 
+        }
+
+        private bool ValidarFormulario()
+        {
+            if (String.IsNullOrWhiteSpace(_inputText))
+            {
+               return false;
+            }
+            if (!_inputText.ToCharArray().All(Char.IsNumber))
+            {                
+                return false;
+            }
+            return true;
         }
 
         static string FormatNumber(double num)
