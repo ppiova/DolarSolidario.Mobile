@@ -1,8 +1,16 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SolidarityDollar.Views.SplashScreen">
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="SolidarityDollar.Views.SplashScreen"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <Grid BackgroundColor="LightGreen">
-        <Image x:Name="logo" Source="DolarLogo.png" VerticalOptions="Center"
-                        HorizontalOptions="Center" WidthRequest="148" HeightRequest="148"
-                        BackgroundColor="LightGreen"/>
+        <Image
+            x:Name="logo"
+            BackgroundColor="LightGreen"
+            HeightRequest="148"
+            HorizontalOptions="Center"
+            Source="SolidarityDolar.png"
+            VerticalOptions="Center"
+            WidthRequest="148" />
     </Grid>
 </ContentPage>
