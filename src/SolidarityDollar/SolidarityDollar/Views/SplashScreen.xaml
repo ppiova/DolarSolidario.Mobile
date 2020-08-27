@@ -7,10 +7,10 @@
         <Image
             x:Name="logo"
             BackgroundColor="LightGreen"
-            HeightRequest="148"
+            HeightRequest="225"
             HorizontalOptions="Center"
             Source="SolidarityDolar.png"
             VerticalOptions="Center"
-            WidthRequest="148" />
+            WidthRequest="207" />
     </Grid>
 </ContentPage>
