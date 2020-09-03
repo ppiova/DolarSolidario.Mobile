@@ -41,5 +41,7 @@ namespace SolidarityDollar
         protected override void OnResume()
         {
         }
+
+       
     }
 }

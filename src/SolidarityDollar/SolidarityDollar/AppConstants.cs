@@ -10,5 +10,10 @@ namespace SolidarityDollar
         public const string ControllerLastRate = "/api/rates/GetLastRate";
         public const string ControllerAllRates = "/api/rates/GetAllRates";
 
+
+        public const string AppCenterKeyiOS = "";
+        public const string AppCenterKeyAndroid = "";
+
+
     }
 }

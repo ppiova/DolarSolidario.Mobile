@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 using SolidarityDollar.Data;
 using SolidarityDollar.Models;
 using Xamarin.Forms;
@@ -51,17 +53,26 @@ namespace SolidarityDollar.ViewModel
 
         public MainPageViewModel()
         {
-            CurrentRate = LastRates;
-
-            if(CurrentRate != null)
+            try
             {
-                _valueRateDolarOficial = Convert.ToDouble(CurrentRate.RateOficial);
-                _valueRateDolarSolidario = Convert.ToDouble(CurrentRate.RateSolidario);
-                _valueRateDolarBlue = Convert.ToDouble(CurrentRate.RateBlue);
-         
-                _dateDolarOficial = CurrentRate.RateDate.Date.ToShortDateString();
-                                
+                CurrentRate = LastRates;
+
+                if (CurrentRate != null)
+                {
+                    _valueRateDolarOficial = Convert.ToDouble(CurrentRate.RateOficial);
+                    _valueRateDolarSolidario = Convert.ToDouble(CurrentRate.RateSolidario);
+                    _valueRateDolarBlue = Convert.ToDouble(CurrentRate.RateBlue);
+
+                    _dateDolarOficial = CurrentRate.RateDate.Date.ToShortDateString();
+
+                }
             }
+            catch (Exception e)
+            {
+                Crashes.TrackError(e);
+
+            }
+           
         }
                
 
@@ -88,23 +99,32 @@ namespace SolidarityDollar.ViewModel
 
         private void CalculateResults()
         {
-            if (ValidarFormulario())
+            try
             {
-                //GoodJob
-                var DoubleResultOficial = Convert.ToDouble(_inputText) * _valueRateDolarOficial;
+                if (ValidarFormulario())
+                {
+                    //GoodJob
+                    var DoubleResultOficial = Convert.ToDouble(_inputText) * _valueRateDolarOficial;
 
-                ResultOficial = FormatNumber(DoubleResultOficial);
-                ResultOficialSmall = string.Format("{0:0,0.##}", DoubleResultOficial);
+                    ResultOficial = FormatNumber(DoubleResultOficial);
+                    ResultOficialSmall = string.Format("{0:0,0.##}", DoubleResultOficial);
 
-                var DoubleResultSolidario = Convert.ToDouble(_inputText) * _valueRateDolarSolidario;
-                ResultSolidario = FormatNumber(DoubleResultSolidario);
-                ResultSolidarioSmall = string.Format("{0:0,0.##}", DoubleResultSolidario);
+                    var DoubleResultSolidario = Convert.ToDouble(_inputText) * _valueRateDolarSolidario;
+                    ResultSolidario = FormatNumber(DoubleResultSolidario);
+                    ResultSolidarioSmall = string.Format("{0:0,0.##}", DoubleResultSolidario);
 
-                var DoubleResultBlue = Convert.ToDouble(_inputText) * _valueRateDolarBlue;
-                ResultBlue = FormatNumber(DoubleResultBlue);
-                ResultBlueSmall = string.Format("{0:0,0.##}", DoubleResultBlue);
+                    var DoubleResultBlue = Convert.ToDouble(_inputText) * _valueRateDolarBlue;
+                    ResultBlue = FormatNumber(DoubleResultBlue);
+                    ResultBlueSmall = string.Format("{0:0,0.##}", DoubleResultBlue);
+
+                }
+
             }
-
+            catch (Exception e)
+            {
+                Crashes.TrackError(e);
+            }
+           
             //Dont Pass   
 
 
@@ -112,15 +132,26 @@ namespace SolidarityDollar.ViewModel
 
         private bool ValidarFormulario()
         {
-            if (String.IsNullOrWhiteSpace(_inputText))
+            try
             {
-               return false;
+                if (String.IsNullOrWhiteSpace(_inputText))
+                {
+                    return false;
+                }
+                if (!_inputText.ToCharArray().All(Char.IsNumber))
+                {
+                    return false;
+                }
+
+                return true;
             }
-            if (!_inputText.ToCharArray().All(Char.IsNumber))
-            {                
+            catch (Exception e)
+            {
+                Crashes.TrackError(e);
                 return false;
             }
-            return true;
+
+          
         }
 
         static string FormatNumber(double num)
