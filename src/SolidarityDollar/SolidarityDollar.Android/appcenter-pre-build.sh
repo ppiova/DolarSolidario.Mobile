@@ -31,15 +31,14 @@ then
     exit
 fi
 
-APP_CONSTANT_FILE=$APPCENTER_SOURCE_DIRECTORY/SolidarityDollar/ApiKeys.cs
+APP_CONSTANT_FILE=$APPCENTER_SOURCE_DIRECTORY/src/SolidarityDollar/SolidarityDollar/AppConstant.cs
 
 if [ -e "$APP_CONSTANT_FILE" ]
 then
-    echo "Updating ApiUrl to $API_URL in ApiKeys.cs"
+    echo "Updating ApiUrl to $API_URL in AppConstant.cs"
     sed -i '' 's#ApiUrl = "[-A-Za-z0-9:_./]*"#ApiUrl = "'$API_URL'"#' $APP_CONSTANT_FILE
-    echo "Updating ApiKeyDolarSolidario to $APP_SECRETS in ApiKeys.cs"
+    echo "Updating ApiKeyDolarSolidario to $APP_SECRETS in AppConstant.cs"
     sed -i '' 's#ApiKeyDolarSolidario = "[-A-Za-z0-9:_./]*"#ApiKeyDolarSolidario = "'$APP_SECRETS'"#' $APP_CONSTANT_FILE
-
-   
+      
     
 fi

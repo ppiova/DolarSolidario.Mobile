@@ -31,7 +31,7 @@ then
     exit
 fi
 
-APP_CONSTANT_FILE=$APPCENTER_SOURCE_DIRECTORY/SolidarityDollar/AppConstant.cs
+APP_CONSTANT_FILE=$APPCENTER_SOURCE_DIRECTORY/src/SolidarityDollar/SolidarityDollar/AppConstant.cs
 
 if [ -e "$APP_CONSTANT_FILE" ]
 then
