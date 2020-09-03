@@ -1,7 +1,11 @@
 ﻿using System;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 using SolidarityDollar.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Device = Xamarin.Forms.Device;
 
 [assembly: ExportFont("Lato-Black.ttf", Alias = "LatoBlack")]
 [assembly: ExportFont("Lato-Bold.ttf", Alias = "LatoBold")]
@@ -24,6 +28,10 @@ namespace SolidarityDollar
 
         protected override void OnStart()
         {
+            AppCenter.Start($"ios={AppSettingsConstants.AppCenterKeyiOS};" +
+                            "uwp={Your UWP App secret here};" +
+                            $"android={AppSettingsConstants.AppCenterKeyAndroid}",
+                typeof(Analytics), typeof(Crashes));
         }
 
         protected override void OnSleep()
