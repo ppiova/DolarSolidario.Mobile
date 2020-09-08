@@ -18,9 +18,9 @@ namespace SolidarityDollar.Services
                 
                 var resultRate = new RateDolar();
 
-                RateDolar result = await AppSettingsConstants.ApiUrl
-                .AppendPathSegment(AppSettingsConstants.ControllerLastRate)
-                .WithHeader("Ocp-Apim-Subscription-Key", AppSettingsConstants.ApiKeyDolarSolidario)
+                RateDolar result = await AppConstant.ApiUrl
+                .AppendPathSegment(AppConstant.ControllerLastRate)
+                .WithHeader("Ocp-Apim-Subscription-Key", AppConstant.ApiKeyDolarSolidario)
                 .GetJsonAsync<RateDolar>();
 
                 resultRate.RateOficial = result.RateOficial;

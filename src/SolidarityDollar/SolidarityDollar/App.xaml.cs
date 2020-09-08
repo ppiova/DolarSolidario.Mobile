@@ -28,9 +28,9 @@ namespace SolidarityDollar
 
         protected override void OnStart()
         {
-            AppCenter.Start($"ios={AppSettingsConstants.AppCenterKeyiOS};" +
+            AppCenter.Start($"ios={AppConstant.AppCenterKeyiOS};" +
                             "uwp={Your UWP App secret here};" +
-                            $"android={AppSettingsConstants.AppCenterKeyAndroid}",
+                            $"android={AppConstant.AppCenterKeyAndroid}",
                 typeof(Analytics), typeof(Crashes));
         }
 

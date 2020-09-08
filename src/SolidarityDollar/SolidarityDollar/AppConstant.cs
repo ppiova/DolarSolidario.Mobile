@@ -1,7 +1,7 @@
 ﻿
 namespace SolidarityDollar
 {
-    public static class AppSettingsConstants
+    public static class AppConstant
     {
         //API Keys
         public const string ApiKeyDolarSolidario = "";
