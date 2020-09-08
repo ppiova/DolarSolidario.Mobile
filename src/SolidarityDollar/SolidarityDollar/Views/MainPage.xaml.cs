@@ -4,6 +4,8 @@ using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 using SolidarityDollar.ViewModel;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -25,8 +27,22 @@ namespace SolidarityDollar.Views
 
         private async void OnTapGestureRecognizerTapped(object sender, EventArgs args)
         {
-            if (!string.IsNullOrWhiteSpace(RateTextEntry.Text))
-                await TextToSpeech.SpeakAsync(RateTextEntry.Text);
+            try
+            {
+                var analyticsData = new Dictionary<string, string> { { "Value", RateTextEntry.Text } };
+                Analytics.TrackEvent("Speak Value", analyticsData);
+
+                if (!string.IsNullOrWhiteSpace(RateTextEntry.Text))
+
+                    await TextToSpeech.SpeakAsync(RateTextEntry.Text);
+            }
+            catch (Exception e)
+            {
+                Crashes.TrackError(e);
+                throw;
+            }
+           
+           
         }
 
       
