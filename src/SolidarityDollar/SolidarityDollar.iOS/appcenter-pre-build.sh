@@ -43,7 +43,7 @@ then
     exit
 fi
 
-APP_CONSTANT_FILE=$APPCENTER_SOURCE_DIRECTORY/SolidarityDollar/AppConstant.cs
+APP_CONSTANT_FILE=$APPCENTER_SOURCE_DIRECTORY/SolidarityDollar/SolidarityDollar/AppConstant.cs
 
 if [ -e "$APP_CONSTANT_FILE" ]
 then
@@ -58,4 +58,6 @@ then
     sed -i '' 's#AppCenterKeyAndroid = "[-A-Za-z0-9:_./]*"#AppCenterKeyAndroid = "'$APP_CENTERANDROID'"#' $APP_CONSTANT_FILE
   
     
+     echo "File content:"
+    cat $APP_CONSTANT_FILE
 fi
