@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 using SolidarityDollar.Data;
 using SolidarityDollar.Models;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace SolidarityDollar.ViewModel
@@ -55,15 +57,19 @@ namespace SolidarityDollar.ViewModel
         {
             try
             {
+                CultureInfo culture = new CultureInfo("en-US");
+
                 CurrentRate = LastRates;
+
 
                 if (CurrentRate != null)
                 {
-                    _valueRateDolarOficial = Convert.ToDouble(CurrentRate.RateOficial);
-                    _valueRateDolarSolidario = Convert.ToDouble(CurrentRate.RateSolidario);
-                    _valueRateDolarBlue = Convert.ToDouble(CurrentRate.RateBlue);
+                    _valueRateDolarOficial = Convert.ToDouble(CurrentRate.RateOficial, culture);
+                    _valueRateDolarSolidario = Convert.ToDouble(CurrentRate.RateSolidario, culture);
+                    _valueRateDolarBlue = Convert.ToDouble(CurrentRate.RateBlue, culture);
 
-                    _dateDolarOficial = CurrentRate.RateDate.Date.ToShortDateString();
+                    //_dateDolarOficial = CurrentRate.RateDate.Date.ToShortDateString();
+                    _dateDolarOficial = CurrentRate.RateDate.Date.ToString("MMMM dd, yyyy");
 
                 }
             }

@@ -7,7 +7,7 @@ using Xamarin.Forms;
 
 namespace SolidarityDollar.Droid
 {
-    [Activity(Label = "SolidarityDollar", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true,
+    [Activity(Label = "Solidarity Dollar", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true,
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {

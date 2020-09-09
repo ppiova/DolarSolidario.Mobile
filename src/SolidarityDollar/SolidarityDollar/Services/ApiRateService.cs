@@ -36,9 +36,9 @@ namespace SolidarityDollar.Services
                 //TODO: Call SQLLite for LastRates
                 var mockRate = new RateDolar
                 {
-                    RateOficial = "100",
-                    RateBlue = "150",
-                    RateSolidario = "130",
+                    RateOficial = "100.50",
+                    RateBlue = "150.2",
+                    RateSolidario = "130.3",
                     RateDate = new DateTime(1984, 9, 5, 18, 30, 00)
                 };
 
