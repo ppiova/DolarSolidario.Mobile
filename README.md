@@ -10,8 +10,6 @@ App concept developed with XamarinForms. With this App you can quickly calculate
 ### iOS
 [![](/assets/ScreenShotIOS-01.png)]  
 [![](/assets/ScreenShotIOS-02.png)]
-![liquors_ios](https://github.com/ppiova/DolarSolidario.Mobile/blob/feature/ReadmeFile/assets/ScreenShotIOS-01.png)
-![liquors_ios3](https://github.com/ppiova/DolarSolidario.Mobile/blob/feature/ReadmeFile/assets/ScreenShotIOS-02.png)
 
 ### GIF
 ![ezgif com-resize](https://github.com/ppiova/DolarSolidario.Mobile/blob/feature/ReadmeFile/assets/android-solidaritydollar.gif)
