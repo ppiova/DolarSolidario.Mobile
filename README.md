@@ -15,8 +15,7 @@ App concept developed with XamarinForms. With this App you can quickly calculate
 ![liquors_android_discover](/assets/ScreenShotAndroid-02.png)
 
 ### iOS
-![](/assets/ScreenShotIOS-01.png)  
-![](/assets/ScreenShotIOS-02.png)
+![](/assets/ScreenShotIOS-01.png) ![](/assets/ScreenShotIOS-02.png)
 
 ## Available today
 [![](/assets/download-on-google-play.png)](https://play.google.com/store/apps/details?id=jextex.solidaritydollar)
