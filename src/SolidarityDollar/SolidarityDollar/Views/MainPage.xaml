@@ -65,7 +65,7 @@
                                             FontSize="50"
                                             HorizontalOptions="FillAndExpand"
                                             HorizontalTextAlignment="Center"
-                                            Keyboard="Default"
+                                            Keyboard="Telephone"
                                             MaxLength="5"
                                             Placeholder="monto"
                                             PlaceholderColor="Gray"
@@ -73,7 +73,8 @@
                                             ReturnCommandParameter="{Binding Text, Source={RelativeSource Mode=Self}}"
                                             Text="{Binding InputText, Mode=TwoWay}"
                                             TextColor="SeaGreen"
-                                            VerticalOptions="Center" />
+                                            VerticalOptions="Center" 
+                                            />
                                         <StackLayout>
 
                                             <Label
