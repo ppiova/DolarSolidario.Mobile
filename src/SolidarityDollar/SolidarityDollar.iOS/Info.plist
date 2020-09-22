@@ -23,9 +23,9 @@
 	<key>MinimumOSVersion</key>
 	<string>8.0</string>
 	<key>CFBundleDisplayName</key>
-	<string>SolidarityDollar</string>
+	<string>Dolar Solidario</string>
 	<key>CFBundleIdentifier</key>
-	<string>ppiova.SolidarityDollar</string>
+	<string>com.jextex.solidaritydollar.ios</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>UILaunchStoryboardName</key>

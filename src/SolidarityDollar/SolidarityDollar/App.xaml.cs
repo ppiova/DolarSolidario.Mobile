@@ -36,6 +36,7 @@ namespace SolidarityDollar
 
         protected override void OnSleep()
         {
+            MainPage = new SplashScreen();
         }
 
         protected override void OnResume()
