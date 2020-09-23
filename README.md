@@ -19,6 +19,7 @@ App concept developed with XamarinForms. With this App you can quickly calculate
 
 ## Available today
 [![](/assets/download-on-google-play.png)](https://play.google.com/store/apps/details?id=jextex.solidaritydollar)
+[![](/assets/download-on-app-store.png)](https://apps.apple.com/ar/app/id1532770752)
 
 
 ## Built with:
